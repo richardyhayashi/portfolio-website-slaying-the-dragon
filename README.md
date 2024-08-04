@@ -11,6 +11,10 @@
 
 `https://fontshare.com`
 
+## Icons
+
+`https://heroicons.com`
+
 ## VS Code Hints
 
 `Ctrl+\`` - Open commandline
@@ -19,8 +23,9 @@
 
 by `Slaying the Dragon`
 
-1. Discord Server
-2. Vite & Utility Classes
+0. Discord Server
+1. Vite & Utility Classes
+2. Header Section
 3.
 4.
 5.

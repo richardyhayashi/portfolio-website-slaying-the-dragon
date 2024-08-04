@@ -1,0 +1,29 @@
+services:
+  nginx:
+    image: nginx:1.27.0-alpine
+    restart: unless-stopped
+    ports:
+      - ${NGINX_PORT_OUT}:${NGINX_PORT}
+      - ${NGINX_SSL_OUT}:${NGINX_SSL}
+    volumes:
+      - ./etc/nginx/conf.d:/etc/niginx/conf.d:ro
+    #env_file:
+    #  - ./.env
+  
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    restart: unless-stopped
+    ports:
+      - ${REACT_PORT_OUT}:${REACT_PORT}
+    volumes:
+      - ./portfolio:/app
+      - node_modules:/app/node_modules
+    #env_file:
+    #  - ./.env
+    depends_on:
+      - nginx
+
+volumes:
+  node_modules:
